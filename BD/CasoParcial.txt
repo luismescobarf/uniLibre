@@ -1,0 +1,106 @@
+group: CasoParcial
+description: Caso de venta de productos, clientes y proveedores.
+
+Cliente = {
+	Nombre:string,Apellido:string,Direccion:string,DI:string,Fecha_Nacimiento:date
+
+	George,Caceres,Poblado,a146rLg,1958-11-14
+	Ana,Linares,Poblado,8C5Y721,1950-12-25
+	Libia,Orozco,La_Julita,Q576N6A,1996-10-19
+	Beatriz,Jimenez,San_Nicolas,r90z5l8,1966-02-06
+	Beatriz,Hernandez,Belmonte,YZI7Hk1,1959-02-20
+	Monica,Falcon,Poblado,7Is0FT5,1963-10-03
+	Libia,Ortiz,San_Nicolas,0129EAU,1964-07-14
+	Ana,Velez,Av_30_de_Agosto,0o6iJ7H,1996-06-28
+	Beatriz,Palacio,Poblado,Eaz58NJ,1966-03-04
+	Jorge,Arteaga,Av_30_de_Agosto,AA2fQDF,1960-02-23
+	Moe,Velez,San_Nicolas,5j85y01,1974-06-20
+	Carla,Cardenas,Poblado,EWh3518,1954-03-13
+	George,Hernandez,Av_30_de_Agosto,1049737,1995-06-23
+	George,Galvis,Poblado,982gn6A,1962-04-21
+	Pepe,Granada,Corales,6Bs550Z,1982-11-01
+	Roncancio,Federer,Av_30_de_Agosto,2554U06,1998-07-11
+	Diana,Arteaga,Poblado,4y0f5f7,1980-02-10
+	Nadia,Cuadrado,La_Villa,l8r7H06,1961-03-01
+	Monica,Palacio,Belmonte,803U28i,1976-03-10
+	Juana,Cuadrado,La_Julita,z8Xpo2s,1950-09-28
+	Monica,Rivera,Poblado,01Re08x,1985-02-03
+	Beatriz,Pelaez,La_Julita,761roI3,1992-04-21
+	Carlos,Gomez,La_Julita,e1ij713,1963-08-23
+	Juana,Caceres,Poblado,f2Y94n6,2002-04-04
+	Ana,Ortiz,Poblado,5689rmg,1941-11-10
+}
+
+Proveedor = {
+        Nombre:string,Direccion:string,NIT:string
+
+        JUMBO,El_Viaducto,1234-70
+        Variedades_Colombia,Centro,444-0
+        Globo,Maraya,457-0
+        Olimpica,Av_30_Agosto,7777-98
+        La14,LaSalle,56789-12
+}
+
+Producto = {
+        Nombre:string,Precio_Unitario:number,Codigo:string,NIT:string
+
+        Chocorramo,2000,56rt,1234-70
+        Papas_Rampi,1500,thtyh7,1234-70
+        BonYurt,1800,trf45,7777-98
+        Caldo_Maggi,500,kjsdkfj5,56789-12
+}
+
+Compra = {
+        Codigo:string,DI:string,ID_Compra:string
+
+        thtyh7,761roI3,520e43K
+        thtyh7,8C5Y721,F838cUd
+        thtyh7,803U28i,60O1Ps8
+        kjsdkfj5,7Is0FT5,VKDYtR2
+        56rt,e1ij713,wRHs5Lc
+        56rt,803U28i,S685ol7
+        trf45,Q576N6A,3979Ddv
+        kjsdkfj5,982gn6A,H8368t7
+        56rt,EWh3518,19603s9
+        thtyh7,5689rmg,z70B1Vh
+        56rt,803U28i,7vW043A
+        kjsdkfj5,EWh3518,3V58A72
+        trf45,a146rLg,z0fAnLM
+        kjsdkfj5,2554U06,Y4E097H
+        trf45,982gn6A,37k5Az7
+        thtyh7,Q576N6A,897tEOd
+        kjsdkfj5,8C5Y721,534Ph31
+        thtyh7,Q576N6A,80y2g81
+        56rt,5689rmg,A6EnQ66
+        thtyh7,z8Xpo2s,R2j9y6k
+        56rt,l8r7H06,su4620n
+        thtyh7,YZI7Hk1,E302Cfk
+        56rt,6Bs550Z,rQc7e5W
+        trf45,5689rmg,r462m46
+        trf45,803U28i,096Vz55
+        56rt,8C5Y721,mY1047d
+        trf45,Q576N6A,1KKasK1
+        trf45,2554U06,Wm083U2
+        56rt,2554U06,Fcp669T
+        trf45,8C5Y721,95T34kK
+        thtyh7,Q576N6A,020y5NJ
+        thtyh7,7Is0FT5,5j967H6
+        thtyh7,r90z5l8,X97ULb7
+        kjsdkfj5,f2Y94n6,X28V6F2
+        56rt,7Is0FT5,1ZOpj8s
+        56rt,982gn6A,O91G543
+        thtyh7,a146rLg,G5r5PDT
+        trf45,z8Xpo2s,9801Bec
+        trf45,0129EAU,535b9u5
+        kjsdkfj5,0129EAU,G7cY0h3
+        thtyh7,AA2fQDF,cwC62dC
+        trf45,z8Xpo2s,3jv0E8U
+        56rt,7Is0FT5,92292cD
+        56rt,01Re08x,9hNo437
+        56rt,0129EAU,9bR44e4
+        trf45,r90z5l8,1w7r7D4
+        thtyh7,z8Xpo2s,P26d693
+        56rt,EWh3518,c300g8B
+        thtyh7,f2Y94n6,5R292X7
+        thtyh7,0o6iJ7H,U2E7XiQ
+}
