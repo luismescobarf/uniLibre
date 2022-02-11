@@ -1,1 +1,70 @@
-<mxfile host="app.diagrams.net" modified="2022-02-11T01:11:30.947Z" agent="5.0 (X11)" version="16.5.6" etag="nqAyvzTFxqL-S2PzqxTY" type="github"><diagram id="yJGOHiVgGljoQ4qW4OAV">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-02-11T01:44:00.772Z" agent="5.0 (X11)" etag="xc_r83g1Pe5CqDO86FMu" version="16.5.6" type="github">
+  <diagram id="yJGOHiVgGljoQ4qW4OAV" name="Page-1">
+    <mxGraphModel dx="645" dy="588" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IhCiCjmtgmUAzDUSJg-i-17" value="Paquete" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="320" y="80" width="290" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="IhCiCjmtgmUAzDUSJg-i-18" value="+Codigo INTEGER PK&#xa;+Descripcion TEXT NN&#xa;+Destinatario VARCHAR(20) NN&#xa;+DireccionDestinatario VARCHAR(20) NN&#xa;+DNI INTEGER FK NN&#xa;+CodigoPostal INTEGER FK NN&#xa;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="IhCiCjmtgmUAzDUSJg-i-17">
+          <mxGeometry y="30" width="290" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="IhCiCjmtgmUAzDUSJg-i-19" value="Camionero" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="70" y="240" width="250" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="IhCiCjmtgmUAzDUSJg-i-20" value="+DNI INTEGER PK&#xa;+Nombre VARCHAR(20) NN&#xa;+Direccion VARCHAR(20) NN&#xa;+Salario REAL NN&#xa;+Poblacion VARCHAR(12)&#xa;&#xa;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="IhCiCjmtgmUAzDUSJg-i-19">
+          <mxGeometry y="30" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IhCiCjmtgmUAzDUSJg-i-21" value="Camion" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="380" y="450" width="250" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="IhCiCjmtgmUAzDUSJg-i-22" value="+Matricula VARCHAR(6) PK&#xa;+Potencia REAL NN&#xa;+Modelo VARCHAR(10)&#xa;&#xa;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="IhCiCjmtgmUAzDUSJg-i-21">
+          <mxGeometry y="30" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IhCiCjmtgmUAzDUSJg-i-23" value="Provincia" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="550" y="260" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IhCiCjmtgmUAzDUSJg-i-24" value="+CodigoPostal INTEGER PK&#xa;+Nombre VARCHAR(20) NN&#xa;&#xa;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="IhCiCjmtgmUAzDUSJg-i-23">
+          <mxGeometry y="30" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="IhCiCjmtgmUAzDUSJg-i-25" value="Conduce" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="60" y="400" width="250" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="IhCiCjmtgmUAzDUSJg-i-26" value="+ID_Conduce INTEGER PK&#xa;+Fecha DATETIME NN&#xa;+DNI INTEGER FK NN&#xa;+Matricula VARCHAR(6) NN&#xa;&#xa;&#xa;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="IhCiCjmtgmUAzDUSJg-i-25">
+          <mxGeometry y="30" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IhCiCjmtgmUAzDUSJg-i-28" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0.46;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="IhCiCjmtgmUAzDUSJg-i-20" target="IhCiCjmtgmUAzDUSJg-i-25">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="210" y="490" as="sourcePoint" />
+            <mxPoint x="310" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IhCiCjmtgmUAzDUSJg-i-31" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;" edge="1" parent="1" source="IhCiCjmtgmUAzDUSJg-i-22" target="IhCiCjmtgmUAzDUSJg-i-26">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="220" y="680" as="sourcePoint" />
+            <mxPoint x="320" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IhCiCjmtgmUAzDUSJg-i-32" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="IhCiCjmtgmUAzDUSJg-i-19" target="IhCiCjmtgmUAzDUSJg-i-18">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="290" y="110" as="sourcePoint" />
+            <mxPoint x="290" y="160" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="195" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IhCiCjmtgmUAzDUSJg-i-34" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="IhCiCjmtgmUAzDUSJg-i-23" target="IhCiCjmtgmUAzDUSJg-i-18">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="587.5" y="310" as="sourcePoint" />
+            <mxPoint x="712.5" y="230" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="650" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
