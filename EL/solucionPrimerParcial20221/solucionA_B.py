@@ -35,6 +35,29 @@ print(cafe[0][-1][1])
 print("(SubNeg) Nombre del último producto de la mesa 1:")
 print(cafe[0][-1][0])
 
+print("Formatear estado de las mesas")
+for id_mesa,mesa in enumerate(cafe):
+    print()
+    print(f"----Mesa {id_mesa+1}----")
+    print("Nombre     Precio")
+    for producto in mesa:
+        print(f"{producto[0]}    {producto[1]}")
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
