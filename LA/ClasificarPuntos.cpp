@@ -2,7 +2,7 @@ Algoritmo: ClasificacionPuntos
 Inicio
 	//Lectura puntos
 	Lea X1,Y1
-	Lea X2,Y3
+	Lea X2,Y2
 	Lea X3,Y3
 	////////////////////////////////////////
 	//Clasificar el primer punto ingresado
@@ -53,4 +53,3 @@ Inicio
 			Fin_Si
 		Fin_Si
 	Fin_Si
-
