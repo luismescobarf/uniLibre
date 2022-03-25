@@ -10,7 +10,7 @@ SELECT  LOWER(SUBSTR(l.Nombre,1,1))
         || '.'
         || LOWER(l.Segundo_Apellido) 
         || l.ID_Lider
-        || '@cons.com.co' as email_lider
+        || '@cons.com.co' as email_lider,
         l.Nombre,
         l.Segundo_Apellido,
         l.ID_Lider
