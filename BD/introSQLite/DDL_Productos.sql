@@ -11,12 +11,11 @@ CREATE TABLE Proveedor (
 );
 
 CREATE TABLE Producto (
-    ID_Producto INTEGER NOT NULL,
+    ID_Producto INTEGER PRIMARY KEY NOT NULL,
     Nombre VARCHAR(50) NOT NULL,
     Precio_Unitario REAL NOT NULL,
     Codigo VARCHAR(10) NOT NULL,
-    ID_Proveedor INTEGER,    
-    PRIMARY KEY (ID_Producto),
+    ID_Proveedor INTEGER,        
     FOREIGN KEY (ID_Proveedor) REFERENCES Proveedor(ID_Proveedor)
 );
 
