@@ -21,3 +21,5 @@ CREATE TABLE Producto (
 
 -- Crear proveedores
 INSERT INTO Proveedor (Nombre,Anio_Constitucion,NIT) VALUES ('La14','1998-10-10','1234-5');
+INSERT INTO Proveedor (ID_Proveedor,Nombre,Anio_Constitucion,NIT) VALUES (89,'Varios','1988-10-10','1554-5');
+INSERT INTO Proveedor (ID_Proveedor,Nombre,Anio_Constitucion,NIT) VALUES (89,'Globo','2004-10-10','7777');
