@@ -3,12 +3,11 @@
 
 --Tiempo_Activo DATETIME GENERATED ALWAYS AS ( datetime('2022-01-01') - Anio_Constitucion ),        
 CREATE TABLE Proveedor (    
-    ID_Proveedor INTEGER NOT NULL,
+    ID_Proveedor INTEGER PRIMARY KEY NOT NULL,
     Nombre VARCHAR(50) NOT NULL,
     Direccion VARCHAR(11),
     Anio_Constitucion DATETIME NOT NULL,    
-    NIT VARCHAR(11) NOT NULL,
-    PRIMARY KEY(ID_Proveedor)    
+    NIT VARCHAR(11) NOT NULL    
 );
 
 CREATE TABLE Producto (
@@ -22,3 +21,4 @@ CREATE TABLE Producto (
 );
 
 -- Crear proveedores
+INSERT INTO Proveedor (Nombre,Anio_Constitucion,NIT) VALUES ('La14','1998-10-10','1234-5');
