@@ -1,15 +1,14 @@
 -- Intro SQL Caso Productos
 -- Create Table, Alter Table
 
-CREATE TABLE Proveedor (
-    PRIMARY KEY(ID_Proveedor),
+--Tiempo_Activo DATETIME GENERATED ALWAYS AS ( datetime('2022-01-01') - Anio_Constitucion ),        
+CREATE TABLE Proveedor (    
     ID_Proveedor INTEGER NOT NULL,
     Nombre VARCHAR(50) NOT NULL,
     Direccion VARCHAR(11),
-    Anio_Constitucion DATETIME NOT NULL,
-    Tiempo_Activo DATETIME GENERATED ALWAYS AS ( datetime('2022-01-01') - Anio_Constitucion )    
+    Anio_Constitucion DATETIME NOT NULL,    
     NIT VARCHAR(11) NOT NULL,
-    PRIMARY KEY(NIT)
+    PRIMARY KEY(ID_Proveedor)    
 );
 
 CREATE TABLE Producto (
@@ -17,8 +16,9 @@ CREATE TABLE Producto (
     Nombre VARCHAR(50) NOT NULL,
     Precio_Unitario REAL NOT NULL,
     Codigo VARCHAR(10) NOT NULL,
-    ID_Proveedor INTEGER,
-    IVA REAL GENERATED ALWAYS AS (Precio_Unitario*0.19),
+    ID_Proveedor INTEGER,    
     PRIMARY KEY (ID_Producto),
     FOREIGN KEY (ID_Proveedor) REFERENCES Proveedor(ID_Proveedor)
 );
+
+-- Crear proveedores
