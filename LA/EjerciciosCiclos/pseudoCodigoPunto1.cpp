@@ -35,13 +35,12 @@ Inicio
 				impares = impares + 1
 			Fin_Si
 			//Actualizar conteo de positivos y sumatoria
-			Si numero < 0:
+			Si numero > 0:
 				positivos = positivos + 1
 				sumatoria = sumatoria + numero
 			Fin_Si
+		Fin_Si
 	Fin_Mientras
-	
-
 Fin
 
 
