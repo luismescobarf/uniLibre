@@ -1,15 +1,6 @@
 -- Intro SQL Caso Productos
 -- Create Table, Alter Table
 
---Tiempo_Activo DATETIME GENERATED ALWAYS AS ( datetime('2022-01-01') - Anio_Constitucion ),        
-CREATE TABLE Proveedor (    
-    ID_Proveedor INTEGER PRIMARY KEY NOT NULL,
-    Nombre VARCHAR(50) NOT NULL,
-    Direccion VARCHAR(11),
-    Anio_Constitucion DATETIME NOT NULL,    
-    NIT VARCHAR(11) NOT NULL    
-);
-
         
 CREATE TABLE Proveedor (    
     ID_Proveedor INTEGER PRIMARY KEY NOT NULL,
@@ -17,7 +8,7 @@ CREATE TABLE Proveedor (
     Direccion VARCHAR(11),
     Anio_Constitucion DATETIME NOT NULL,    
     NIT VARCHAR(11) NOT NULL,
-    Tiempo_Activo DATETIME GENERATED ALWAYS AS ( datetime('2022-01-01') - Anio_Constitucion )
+    Tiempo_Activo DATETIME GENERATED ALWAYS AS ( datetime('2022-01-01') - Anio_Constitucion )    
 );
 
 CREATE TABLE Producto (
@@ -26,8 +17,21 @@ CREATE TABLE Producto (
     Precio_Unitario REAL NOT NULL,
     Codigo VARCHAR(10) NOT NULL,
     ID_Proveedor INTEGER,        
+    IVA REAL GENERATED ALWAYS AS ( Precio_Unitario * 0.19 ),    
     FOREIGN KEY (ID_Proveedor) REFERENCES Proveedor(ID_Proveedor)
 );
+
+        
+-- CREATE TABLE Proveedor (    
+--     ID_Proveedor INTEGER PRIMARY KEY NOT NULL,
+--     Nombre VARCHAR(50) NOT NULL,
+--     Direccion VARCHAR(11),
+--     Anio_Constitucion DATETIME NOT NULL,    
+--     NIT VARCHAR(11) NOT NULL,
+--     Tiempo_Activo DATETIME GENERATED ALWAYS AS ( datetime('2022-01-01') - Anio_Constitucion )
+-- );
+
+
 
 -- Crear proveedores
 INSERT INTO Proveedor (Nombre,Anio_Constitucion,NIT) VALUES ('La14','1998-10-10','1234-5');
