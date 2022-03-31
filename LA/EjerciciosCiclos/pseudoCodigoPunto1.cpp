@@ -25,6 +25,7 @@ Inicio
 			promedio = sumatoria / positivos
 			Escriba "El promedio es: " promedio
 			Escriba "Ingresaron " pares " pares y " impares "impares"
+			break;
 		Si_no:
 			//Actualización de variables
 			n = n + 1//Actualizar conteo total
