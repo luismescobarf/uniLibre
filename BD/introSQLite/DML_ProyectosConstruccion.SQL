@@ -120,6 +120,10 @@ WHERE p.Serial LIKE '%BP';
 -- menos de 350 metros cuadrados
 strftime('%Y',Proyecto.Fecha_Inicio) = '2020'
 
+-- Proyectos realizados en el año 2020
+-- que sean de estrato 3 y que estén en
+-- ciudades diferentes a Bogotá y Pereira
+
 
 
 
