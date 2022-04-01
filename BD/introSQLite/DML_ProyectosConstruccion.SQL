@@ -31,5 +31,13 @@ FROM Proyecto p
 JOIN Tipo t ON p.ID_Tipo = t.ID_Tipo
 JOIN Lider l ON p.ID_Lider = l.ID_Lider;
 
+-- (Ejemplo de agrupamiento y ordenamiento)
+-- Cuántos proyectos tiene cada líder?
+-- Presentar el listado ordernado de
+-- mayor a menor (desde el que tiene a cargo más proyectos)
+
+
+
+
 
 
