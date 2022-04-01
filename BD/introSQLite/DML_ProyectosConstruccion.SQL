@@ -75,6 +75,41 @@ ORDER BY    Numero_Proyectos DESC,
             l.Nombre ASC,
             l.ID_Lider ASC;
 
+-- El mismo requerimiento pero para líderes que 
+-- manejan entre 7 y 11 proyectos
+SELECT  l.ID_Lider,
+        l.Nombre,
+        l.Cargo,
+        COUNT(*) as Numero_Proyectos
+FROM Proyecto p
+JOIN Lider l ON p.ID_Lider = l.ID_Lider
+WHERE   l.Cargo IN ('Coordinador', 'Gerente')
+GROUP BY l.ID_Lider
+HAVING Numero_Proyectos >= 7 AND Numero_Proyectos <=11        
+ORDER BY    Numero_Proyectos DESC,
+            l.Cargo ASC,
+            l.Nombre ASC,
+            l.ID_Lider ASC;
+
+SELECT  l.ID_Lider,
+        l.Nombre,
+        l.Cargo,
+        COUNT(*) as Numero_Proyectos
+FROM Proyecto p
+JOIN Lider l ON p.ID_Lider = l.ID_Lider
+WHERE   l.Cargo IN ('Coordinador', 'Gerente')
+GROUP BY l.ID_Lider
+HAVING Numero_Proyectos BETWEEN 7 AND 11
+ORDER BY    Numero_Proyectos DESC,
+            l.Cargo ASC,
+            l.Nombre ASC,
+            l.ID_Lider ASC;
+
+
+
+
+
+
 
 
 
