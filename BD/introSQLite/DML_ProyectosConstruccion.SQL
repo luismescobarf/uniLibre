@@ -36,6 +36,45 @@ JOIN Lider l ON p.ID_Lider = l.ID_Lider;
 -- Presentar el listado ordernado de
 -- mayor a menor (desde el que tiene a cargo más proyectos)
 
+SELECT  l.ID_Lider,
+        l.Nombre,
+        l.Cargo,
+        COUNT(*) as Numero_Proyectos
+FROM Proyecto p
+JOIN Lider l ON p.ID_Lider = l.ID_Lider
+GROUP BY l.ID_Lider
+ORDER BY    Numero_Proyectos DESC,
+            l.Nombre ASC,
+            l.ID_Lider ASC;
+
+-- El requerimiento anterior pero para los líderes cuyo cargo 
+-- o es Coordinador o es Gerente
+
+SELECT  l.ID_Lider,
+        l.Nombre,
+        l.Cargo,
+        COUNT(*) as Numero_Proyectos
+FROM Proyecto p
+JOIN Lider l ON p.ID_Lider = l.ID_Lider
+WHERE l.Cargo = 'Coordinador' OR l.Cargo = 'Gerente'
+GROUP BY l.ID_Lider
+ORDER BY    Numero_Proyectos DESC,
+            l.Nombre ASC,
+            l.ID_Lider ASC;
+
+SELECT  l.ID_Lider,
+        l.Nombre,
+        l.Cargo,
+        COUNT(*) as Numero_Proyectos
+FROM Proyecto p
+JOIN Lider l ON p.ID_Lider = l.ID_Lider
+WHERE l.Cargo IN ('Coordinador', 'Gerente')
+GROUP BY l.ID_Lider
+ORDER BY    Numero_Proyectos DESC,
+            l.Cargo ASC,
+            l.Nombre ASC,
+            l.ID_Lider ASC;
+
 
 
 
