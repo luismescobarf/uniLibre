@@ -106,6 +106,20 @@ ORDER BY    Numero_Proyectos DESC,
             l.ID_Lider ASC;
 
 
+-- Proyectos con el serial terminado en las letras BP
+SELECT p.Serial FROM Proyecto P;
+
+SELECT  p.ID_Proyecto,
+        p.Clasificacion,
+        p.Serial
+FROM Proyecto P
+WHERE p.Serial LIKE '%BP';
+
+-- Proyectos realizados en el año 2020
+-- que sean de estrato 3 y que tengan 
+-- menos de 350 metros cuadrados
+strftime('%Y',Proyecto.Fecha_Inicio) = '2020'
+
 
 
 
