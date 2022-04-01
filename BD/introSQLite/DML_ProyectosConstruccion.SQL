@@ -116,13 +116,35 @@ FROM Proyecto P
 WHERE p.Serial LIKE '%BP';
 
 -- Proyectos realizados en el año 2020
--- que sean de estrato 3 y que tengan 
--- menos de 350 metros cuadrados
-strftime('%Y',Proyecto.Fecha_Inicio) = '2020'
+-- que sean de máximo estrato 3 y que tengan 
+-- hasta 350 metros cuadrados
+--strftime('%Y',Proyecto.Fecha_Inicio) = '2020'
+
+select  p.ID_Proyecto,
+        t.Estrato,
+        t.Area_Max
+from Proyecto p
+join Tipo t on p.ID_Tipo = t.ID_Tipo
+where strftime('%Y', p.Fecha_Inicio) = '2020'
+and t.Estrato <= 3
+and t.Area_Max <= 350;
 
 -- Proyectos realizados en el año 2020
--- que sean de estrato 3 y que estén en
+-- que sean de estrato 3 o menos y que estén en
 -- ciudades diferentes a Bogotá y Pereira
+
+select  p.ID_Proyecto,
+        t.Estrato,
+        t.Area_Max,
+        p.Ciudad
+from Proyecto p
+join Tipo t on p.ID_Tipo = t.ID_Tipo
+where strftime('%Y', p.Fecha_Inicio) = '2020'
+and t.Estrato <= 3
+and p.Ciudad NOT IN ('Pereira','Bogota');
+
+
+
 
 
 
