@@ -21,6 +21,8 @@ CREATE TABLE Producto (
     FOREIGN KEY (ID_Proveedor) REFERENCES Proveedor(ID_Proveedor)
 );
 
+
+
         
 -- CREATE TABLE Proveedor (    
 --     ID_Proveedor INTEGER PRIMARY KEY NOT NULL,
@@ -37,3 +39,9 @@ CREATE TABLE Producto (
 INSERT INTO Proveedor (Nombre,Anio_Constitucion,NIT) VALUES ('La14','1998-10-10','1234-5');
 INSERT INTO Proveedor (ID_Proveedor,Nombre,Anio_Constitucion,NIT) VALUES (89,'Varios','1988-10-10','1554-5');
 INSERT INTO Proveedor (ID_Proveedor,Nombre,Anio_Constitucion,NIT) VALUES (89,'Globo','2004-10-10','7777');
+
+
+-- Crear productos
+INSERT INTO Producto () VALUES ();
+INSERT INTO Producto    (Nombre,Precio_Unitario,Codigo,ID_Proveedor) 
+VALUES                  ('CocaCola',2500,'CCAR',1);
