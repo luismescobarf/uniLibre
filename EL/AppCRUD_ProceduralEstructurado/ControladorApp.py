@@ -20,11 +20,13 @@ while mainloop:
     #Adicionar
     if opcion == 1:         
         
-        ic.mensaje("En construcción!!")
+        ic.mensaje("-- Adicionando tarea!")
                  
-        #Presentar formulario adicionar
+        #Presentar formulario adicionar tarea y capturarla
+        tarea = ic.formularioAdicionarTarea()        
 
         #Actualizar el modelo con la información recogida
+        CRUD.CREATE(tarea,tasks)
 
     #Listar
     elif opcion == 2:

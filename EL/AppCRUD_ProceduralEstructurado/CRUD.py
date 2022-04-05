@@ -10,4 +10,7 @@ def carga():
         ['Programar', 2, False]
     ]
     return tasks
+
+def CREATE(tarea,tasks):
+    tasks.append(tarea)
     
