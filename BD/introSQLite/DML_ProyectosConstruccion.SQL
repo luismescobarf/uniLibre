@@ -141,7 +141,8 @@ from Proyecto p
 join Tipo t on p.ID_Tipo = t.ID_Tipo
 where strftime('%Y', p.Fecha_Inicio) = '2020'
 and t.Estrato <= 3
-and p.Ciudad NOT IN ('Pereira','Bogota');
+and p.Ciudad NOT IN ('Pereira','Bogota')
+LIMIT 10;
 
 
 
