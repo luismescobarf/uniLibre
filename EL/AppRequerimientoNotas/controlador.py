@@ -13,6 +13,7 @@ from Materia import Materia
 # print("Solicitar nota en escala de 100: ",nota1.getEscala100())
 
 #Probar Materia con el requerimiento base
-materia = Materia(nota1=40,nota2=50,nota3=39,nota4=76,nota5=96)
+#materia = Materia(nota1=40,nota2=50,nota3=39,nota4=76,nota5=96)
+materia = Materia(notas=[40,float(2.5),39,76,96])
 materia.calcularPromedioAjustado()
 materia.mostrarPromedioAjustado()
