@@ -160,6 +160,9 @@ while continuar:
         
         #Lógica
         continuar = False
+        #break
+        #continue
+        
         
     else:
         
