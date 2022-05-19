@@ -7,9 +7,12 @@ def mostrarResultado(c):
     print()
     
 def capturarOperandos():
-    a = int(input("Ingresar primer valor: "))
-    b = int(input("Ingresar segundo valor: "))
-    return a,b
+    try:
+        a = int(input("Ingresar primer valor: "))
+        b = int(input("Ingresar segundo valor: "))
+        return a,b
+    except:
+        print("Error en el valor ingresado!!!")
 
 def mostrarMenu():
     print("---- Operaciones Calculadora ----")
@@ -19,5 +22,9 @@ def mostrarMenu():
     print("4) Potencia")
     print("5) Division")
     print("6) Salir")
-    opcion = int(input("Ingrese una opcion: "))#Captura del operador
-    return opcion 
+    try:
+        opcion = int(input("Ingrese una opcion: "))#Captura del operador
+        return opcion 
+    except:
+        print("Error en la opcion ingresada!")
+    

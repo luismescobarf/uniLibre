@@ -15,5 +15,11 @@ def potencia(a,b):
     return c
 
 def division(a,b):
-    c = a / b
-    return c
+    try:
+        c = a / b
+        return c
+    except ZeroDivisionError:
+        print("Division entre cero retornamos infinito!")
+        return 9999999
+    except TypeError:
+        print("Error de tipado")
