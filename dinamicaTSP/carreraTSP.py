@@ -1,6 +1,7 @@
 """Simulaciones Problema del Agente Viajero en Turtle y resuelto con OR-TOOLS
 Luis Miguel Escobar
 Juan Manuel Cárdenas
+Programa de Ingeniería de Sistemas
 Universidad Libre Seccional Pereira"""
 
 #Librerías del solver OR-Tools - GoogleAI
