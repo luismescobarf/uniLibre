@@ -123,6 +123,21 @@ def generarCoordenadasSolucion(coordenadasClientes,tour):
 	tourX.append(coordenadasClientes[ tour[-1] ][1])
 	tourY.append(coordenadasClientes[ tour[-1] ][2])	
 	return tourX,tourY
+
+#Generar coordenadas graficables de todos los arcos (n x n nodos)
+def generarCoordenadasGrafoCompleto(coordenadasClientes):
+	arcoX = []
+	arcoY = []
+	#Obtener el número de nodos
+	numeroNodos = len(coordenadasClientes)
+	for i in range(numeroNodos):
+		for j in range(numeroNodos):
+			if i != j:
+				arcoX.append(coordenadasClientes[ i ][1])
+				arcoX.append(coordenadasClientes[ j ][1])
+				arcoY.append(coordenadasClientes[ i ][2])
+				arcoY.append(coordenadasClientes[ j ][2])		
+	return arcoX,arcoY
 	
 # Función para graficar solución
 def dibujarSolucion(coordenadasClientes,tour,optimo=None):
@@ -167,6 +182,40 @@ def dibujarSolucion(coordenadasClientes,tour,optimo=None):
 
 	# Set chart title.
 	plt.title("Caso TSP " + str(len(coordenadasClientes)) + " Clientes (Nodos)")	
+
+	# Set x, y label text.
+	plt.xlabel("Eje X")
+	plt.ylabel("Eje Y")
+	plt.show()
+ 
+ # Función para graficar el grafo completo
+def dibujarGrafoCompleto(coordenadasClientes):
+
+	#Componente x de las coordenadas de los clientes
+	componentesX = [i[1] for i in coordenadasClientes]
+
+	#Componente y de las coordenadas de los clientes
+	componentesY = [i[2] for i in coordenadasClientes]
+
+	#Draw point based on above x, y axis values	
+	plt.scatter(componentesX, componentesY, s=10, c="black")
+	
+	#Generar coordenadas de todos los arcos
+	coordenadasSolucionX,coordenadasSolucionY = generarCoordenadasGrafoCompleto(coordenadasClientes)
+	
+	#Colocar etiquetas
+	etiquetas = range(len(coordenadasClientes))
+	#plt.text(componentesX, componentesX, etiquetas, fontsize=9)
+	for et in etiquetas:
+		plt.annotate(et, (coordenadasClientes[et][1] + 0.05, coordenadasClientes[et][2]))  # add labels				
+	
+	#Dibujar arcos	 
+	# plt.plot(coordenadasSolucionX,coordenadasSolucionY,linewidth=0.5)
+	plt.plot(coordenadasSolucionX,coordenadasSolucionY,'g--',linewidth=0.5)
+	# plt.plot(coordenadasSolucionX,coordenadasSolucionY,linewidth=0.5,markeredgecolor='black',markeredgewidth=2)	
+ 
+	# Set chart title.
+	plt.title("Grafo Completo Caso TSP " + str(len(coordenadasClientes)) + " Clientes (Nodos)")	
 
 	# Set x, y label text.
 	plt.xlabel("Eje X")
@@ -253,7 +302,8 @@ def indicesSolucionesOptimasTSPLIB():
 # f = open('eil51.tsp', 'r')	
 # f = open('st70.tsp', 'r')
 # f = open('pereira.tsp', 'r')
-f = open('pereiraVersion1.tsp', 'r')
+# f = open('pereiraVersion1.tsp', 'r')
+f = open('dosquebradasJunio10.tsp', 'r')
 
 #Contenedores
 coordenadasClientes = []
@@ -321,11 +371,15 @@ search_parameters = pywrapcp.DefaultRoutingSearchParameters()
 search_parameters.first_solution_strategy = (
 	routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC)
 
-"""search_parameters = pywrapcp.DefaultRoutingSearchParameters()
+# #Profundización de la búsqueda
+search_parameters = pywrapcp.DefaultRoutingSearchParameters()
 search_parameters.local_search_metaheuristic = (
     routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH)
-search_parameters.time_limit.seconds = 120
-search_parameters.log_search = True"""
+search_parameters.time_limit.seconds = 2
+search_parameters.log_search = True
+
+#Dibujer grafo completo antes de resolver (opcional)
+dibujarGrafoCompleto(coordenadasClientes)
 
 # Solve the problem.
 assignment = routing.SolveWithParameters(search_parameters)
@@ -369,17 +423,17 @@ if op == '1' or op == str():
 	if assignment:
 		print_solution(manager, routing, assignment)
     
-    #Recorrido tortuga con tour calculado
-	dibujarPuntosTortuga(coordenadasClientes,tour,-300,0,"Algoritmo (Programa)")
+    # #Recorrido tortuga con tour calculado
+	# dibujarPuntosTortuga(coordenadasClientes,tour,-300,0,"Algoritmo (Programa)")
 
-	#Generar un recorrido aleatorizado
-	tourAleatorizado = list(tour)
-	tourAleatorizado.pop(0)
-	tourAleatorizado.pop(-1)
-	random.shuffle(tourAleatorizado)
-	tourAleatorizado.insert(0,0)
-	tourAleatorizado.append(0)
-	dibujarPuntosTortuga(coordenadasClientes,tourAleatorizado,-100,-300,"Orden Etiquetas")
+	# #Generar un recorrido aleatorizado
+	# tourAleatorizado = list(tour)
+	# tourAleatorizado.pop(0)
+	# tourAleatorizado.pop(-1)
+	# random.shuffle(tourAleatorizado)
+	# tourAleatorizado.insert(0,0)
+	# tourAleatorizado.append(0)
+	# dibujarPuntosTortuga(coordenadasClientes,tourAleatorizado,-100,-300,"Orden Etiquetas")
  
  	#Imprimir solución gráfica
 	dibujarSolucion(coordenadasClientes,tour)
