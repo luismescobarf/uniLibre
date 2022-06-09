@@ -378,8 +378,8 @@ search_parameters.local_search_metaheuristic = (
 search_parameters.time_limit.seconds = 2
 search_parameters.log_search = True
 
-#Dibujer grafo completo antes de resolver (opcional)
-dibujarGrafoCompleto(coordenadasClientes)
+# #Dibujer grafo completo antes de resolver (opcional)
+# dibujarGrafoCompleto(coordenadasClientes)
 
 # Solve the problem.
 assignment = routing.SolveWithParameters(search_parameters)
@@ -408,7 +408,7 @@ tour = list(map(int, plan_output.split("->") ))
 print("------------------------")
 print("Simulador Agente Viajero")
 print("------------------------")
-print("1 - Solución Algoritmo VS Orden de Ingreso")
+print("1 - Orden de Ingreso VS Solución del Algoritmo")
 print("2 - Equipo1 VS Equipo2")
 print("3 - Equipo3 VS Equipo4")
 print("4 - Final")
@@ -421,19 +421,17 @@ if op == '1' or op == str():
     
     #Mostrar solución de OR-Tools en consola si se logró obtener
 	if assignment:
-		print_solution(manager, routing, assignment)
-    
-    # #Recorrido tortuga con tour calculado
-	# dibujarPuntosTortuga(coordenadasClientes,tour,-300,0,"Algoritmo (Programa)")
+		print_solution(manager, routing, assignment)   
 
-	# #Generar un recorrido aleatorizado
-	# tourAleatorizado = list(tour)
-	# tourAleatorizado.pop(0)
-	# tourAleatorizado.pop(-1)
-	# random.shuffle(tourAleatorizado)
-	# tourAleatorizado.insert(0,0)
-	# tourAleatorizado.append(0)
-	# dibujarPuntosTortuga(coordenadasClientes,tourAleatorizado,-100,-300,"Orden Etiquetas")
+	#Generar un recorrido por orden de etiquetas	
+	tourEtiquetas = list(range(numeroClientes))	
+	tourEtiquetas.append(0)
+ 	
+	#Recorrido orden etiquetas
+	dibujarPuntosTortuga(coordenadasClientes,tourEtiquetas,-500,0,"Orden Etiquetas")
+   
+   	#Recorrido tortuga con tour calculado
+	dibujarPuntosTortuga(coordenadasClientes,tour,-100,-300,"Algoritmo (Programa)")
  
  	#Imprimir solución gráfica
 	dibujarSolucion(coordenadasClientes,tour)
@@ -460,7 +458,7 @@ elif op == '2':
 	print(solucionesEquipos)
 
 	#Simulación equipo 1    
-	dibujarPuntosTortuga(coordenadasClientes,solucionesEquipos[0],-300,0,nombresEquipos[0])
+	dibujarPuntosTortuga(coordenadasClientes,solucionesEquipos[0],-500,0,nombresEquipos[0])
 	#Simulación equipo 2
 	dibujarPuntosTortuga(coordenadasClientes,solucionesEquipos[1],-100,-300,nombresEquipos[1])
  
@@ -488,7 +486,7 @@ elif op == '3':
 	print(solucionesEquipos)
 
 	#Simulación equipo 1    
-	dibujarPuntosTortuga(coordenadasClientes,solucionesEquipos[0],-300,0,nombresEquipos[0])
+	dibujarPuntosTortuga(coordenadasClientes,solucionesEquipos[0],-500,0,nombresEquipos[0])
 	#Simulación equipo 2
 	dibujarPuntosTortuga(coordenadasClientes,solucionesEquipos[1],-100,-300,nombresEquipos[1])
  
@@ -516,7 +514,7 @@ elif op == '4':
 	print(solucionesEquipos)
 
 	#Simulación equipo 1    
-	dibujarPuntosTortuga(coordenadasClientes,solucionesEquipos[0],-300,0,nombresEquipos[0])
+	dibujarPuntosTortuga(coordenadasClientes,solucionesEquipos[0],-500,0,nombresEquipos[0])
 	#Simulación equipo 2
 	dibujarPuntosTortuga(coordenadasClientes,solucionesEquipos[1],-100,-300,nombresEquipos[1])
 
@@ -548,7 +546,7 @@ elif op == '5':
 		print_solution(manager, routing, assignment)
 
 	#Simulación campeón    
-	dibujarPuntosTortuga(coordenadasClientes,solucionesEquipos[0],-300,0,nombresEquipos[0])
+	dibujarPuntosTortuga(coordenadasClientes,solucionesEquipos[0],-500,0,nombresEquipos[0])
 	#Simulación solución encontrada por el algoritmo
 	dibujarPuntosTortuga(coordenadasClientes,tour,-100,-300,"Algoritmo (Programa)")
  
