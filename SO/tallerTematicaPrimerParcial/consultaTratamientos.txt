@@ -1,0 +1,19 @@
+Placebo
+
+1 Pepe Granada buena placebo
+4 Mónica Madrid mala placebo
+7 Óscar Barcelona mala Placebo
+10 Jordi Barcelona mala Placebo
+
+1mg
+
+2 Juan Lugo muy buena 1mg
+3 Alicia Valencia muy buena 1mg
+8 Trini Valencia muy buena 1mg
+
+2mg
+
+5 Alberto Madrid regular 2mg
+6 Toni Toledo mala 2mg
+9 Pepe Valencia buena 2mg
+11 Manolo Sevilla desconocido 2mg

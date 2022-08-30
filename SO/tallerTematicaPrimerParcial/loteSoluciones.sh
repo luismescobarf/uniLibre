@@ -9,15 +9,27 @@
 # #3) ¿De cuántos pacientes no tenemos datos de progresión?
 # grep desconocido cancer_progresion.txt | wc -l 
 
-# 5) Convertir la separación de comas de la tabla de doble ciego a tabuladores.
-cat cancer_ciego.txt | tr ',' '\t' > cancer_ciego_tab.txt
+# # 5) Convertir la separación de comas de la tabla de doble ciego a tabuladores.
+# cat cancer_ciego.txt | tr ',' '\t' > cancer_ciego_tab.txt
  
 
-# 6) Unir la tabla de los resultados de la terapia con la del doble ciego.
-
+# # 6) Unir la tabla de los resultados de la terapia con la del doble ciego.
+# join cancer_progresion.txt cancer_ciego_tab.txt > estudioAmpliado.txt
  
 
-# 7) ¿Cómo les ha ido a los pacientes según el tipo de tratamiento? (Placebo está escrito con mayúsculas y minúsculas)
+# # 7) ¿Cómo les ha ido a los pacientes según el tipo de tratamiento? (Placebo está escrito con mayúsculas y minúsculas)
+# #Consultar pacientes tratados con placebo y guardarlos en el archivo
+# echo "Placebo
+# " > consultaTratamientos.txt
+# grep -i placebo estudioAmpliado.txt >> consultaTratamientos.txt
+# echo "
+# 1mg
+# " >> consultaTratamientos.txt
+# grep -i 1mg estudioAmpliado.txt >> consultaTratamientos.txt
+# echo "
+# 2mg
+# " >> consultaTratamientos.txt
+# grep -i 2mg estudioAmpliado.txt >> consultaTratamientos.txt
 
  
 
