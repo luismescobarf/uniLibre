@@ -73,7 +73,7 @@
 # cat /Users/luismiguelescobar/.bash_history | grep -n tar | tr ':' '\t'| cut -f 1 >> informeComando_tar.txt
 
 #########Diseño ejercicios parcial
-# Crear un archivo de configuración por cada uno de los usuarios que tienen procesos activos en un directorio separado
+#0) Crear un archivo de configuración por cada uno de los usuarios que tienen procesos activos en un directorio separado
 
 # #Versión inicial
 # mkdir directorio
@@ -126,6 +126,15 @@ rm compresion/ejecucionPython.sh compresion/directoriosIdentificados.sh
 #3) Escribir una rutina que cree un directorio llamado accesosDirectos en el home del usuario 
 # con los enlaces simbólicos a todos los archivos de la carpeta descargada, y archivos de sus 
 # subdirectorios.
+
+#4) De la base de datos publicada en:
+# https://raw.githubusercontent.com/luismescobarf/uniLibre/main/bank.csv
+# Desarrollar un script que descargue la base de datos y muestre:
+# - El intervalo de edades de la base de datos: Menor edad - Mayor edad
+# - ¿Cuántos valores diferentes tiene cada uno de los campos de la base de datos?
+
+# cat bank.csv | tr ',' '\t' | cut -f 1 | grep -v age | sort | uniq 
+# cat bank.csv | tr ',' '\t'| head -n 1 | tr '\t' '\n' 
 
 
 
