@@ -1,0 +1,1 @@
+lrwxr-xr-x@  1 luismiguelescobar  staff        49 Aug 17 15:00 bancos.txt -> /Users/luismiguelescobar/Downloads/bank-names.txt

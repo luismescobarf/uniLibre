@@ -49,6 +49,23 @@
 #     dejando esos archivos con permisos de ejecución únicamente para el grupo.
 # - Copiar todos los archivos .txt a una carpeta en el home que se denomine BackUP_TXT con todos estos archivos comprimidos.
 
+# wget https://github.com/luismescobarf/uniLibre/raw/main/paquete.tar.gz
+# tar -xzf paquete.tar.gz
+# ls -al compresion/ | grep ^l > listadoEnlacesSimbolicos.txt
+# echo "Número de directorios en el directorio descargado: " > conteoDirectorios.txt
+# ls -al compresion/ | grep ^d | wc -l >> conteoDirectorios.txt 
+# mkdir /Users/luismiguelescobar/rutinasPython
+# cp compresion/*.py /Users/luismiguelescobar/rutinasPython/
+# chmod 010 /Users/luismiguelescobar/rutinasPython/*.py
+# mkdir /Users/luismiguelescobar/BackUP_TXT
+# cp compresion/*.txt /Users/luismiguelescobar/BackUP_TXT/
+# rm compresion/bancos.txt
+# cp compresion/*.txt /Users/luismiguelescobar/BackUP_TXT/
+# tar -cvzf /Users/luismiguelescobar/BackUP_TXT/ArchivosTXT.tar.gz /Users/luismiguelescobar/BackUP_TXT/*.txt
+# rm /Users/luismiguelescobar/BackUP_TXT/*.txt
+
+
+
  
 
 # 10) Generar un script o un pipe o una mezcla de ambas, para dejar en un archivo el informe de cuántas
