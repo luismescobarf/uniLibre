@@ -1,0 +1,4 @@
+  UID   PID  PPID   C STIME   TTY           TIME CMD
+    0     1     0   0 11:17PM ??         0:29.21 /sbin/launchd
+    0    67     1   0 11:17PM ??         0:01.78 /usr/sbin/syslogd
+    0    68     1   0 11:17PM ??         0:05.06 /usr/libexec/UserEventAgent (System)

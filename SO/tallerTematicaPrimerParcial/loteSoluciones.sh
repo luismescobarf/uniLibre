@@ -63,11 +63,71 @@
 # cp compresion/*.txt /Users/luismiguelescobar/BackUP_TXT/
 # tar -cvzf /Users/luismiguelescobar/BackUP_TXT/ArchivosTXT.tar.gz /Users/luismiguelescobar/BackUP_TXT/*.txt
 # rm /Users/luismiguelescobar/BackUP_TXT/*.txt
-
-
-
  
 
-# 10) Generar un script o un pipe o una mezcla de ambas, para dejar en un archivo el informe de cuántas
-# veces se ha utilizado el comando tar y en cuáles líneas.
+# # 10) Generar un script o un pipe o una mezcla de ambas, para dejar en un archivo el informe de cuántas
+# # veces se ha utilizado el comando tar y en cuáles líneas.
+# echo "Número de veces que se ha utilizado tar: " > informeComando_tar.txt 
+# cat /Users/luismiguelescobar/.bash_history | grep -n tar | tr ':' '\t'| cut -f 1 | wc -l >> informeComando_tar.txt
+# echo "Líneas del historial involucrando el comando: " >> informeComando_tar.txt 
+# cat /Users/luismiguelescobar/.bash_history | grep -n tar | tr ':' '\t'| cut -f 1 >> informeComando_tar.txt
+
+#########Diseño ejercicios parcial
+# Crear un archivo de configuración por cada uno de los usuarios que tienen procesos activos en un directorio separado
+
+# #Versión inicial
+# mkdir directorio
+# ps -ef | tr -s ' ' | tr ' ' '\t' | cut -f 1,2 | sort | uniq | grep -v UID | sed 's/\t/touch /' > ./directorio/crearArchivos.sh
+# chmod 110 directorio/crearArchivos.sh
+# cd directorio
+# ./crearArchivos.sh
+
+# #Versión completa
+# mkdir directorio
+# ps -ef | tr -s ' ' | tr ' ' '\t' | cut -f 1,2 | sort | uniq | grep -v UID | sed 's/\t/touch /' | sed 's/$/.txt/' > ./directorio/crearArchivos.sh
+# chmod 777 directorio/crearArchivos.sh
+# cd directorio
+# ./crearArchivos.sh
+
+#####Ejercicios Parcial/Taller Clase
+
+#1) Diseñar una rutina por lotes para identificar los scripts de python del directorio descargado 
+# y en todos sus subdirectorios (solamente un nivel de profundización), para luego ejecutarlos 
+# por lote y capturar sus salidas para almacenarlas en un archivo. 
+# - Quitar los permisos a todos los archivos por lotes generados en el proceso.
+# - El script principal debe ejecutarse desde afuera de la carpeta resultante de la descompresión.
+# - El resultado debe quedar almacenado en un archivo por fuera de la carpeta que se denomine salida.out
+# - Redireccionar los errores que se generen a un archivo que se llame erroresLote.out
+
+
+#Desarrollo:
+#Iniciar el lote de ejecuciones de python
+cd compresion
+ls -hl *.py | tr -s ' ' | tr ' ' '\t' | cut -f 9 |  sed 's/^/python3 /' >> ejecucionPython.sh
+chmod 777 ejecucionPython.sh
+# echo "Ubicación: "
+# pwd
+ls -hl | grep ^d | tr -s ' ' | tr ' ' '\t' | cut -f 9 | sed 's/^/ls -hl /' | sed "s/$/\/*.py 2>> ..\/erroresLote.out /" >> directoriosIdentificados.sh
+chmod 777 directoriosIdentificados.sh
+./directoriosIdentificados.sh | tr -s ' ' | tr ' ' '\t' | cut -f 9 |  sed 's/^/python3 /' >> ejecucionPython.sh
+./ejecucionPython.sh >> ../salidaPython.out
+cd ../
+rm compresion/ejecucionPython.sh compresion/directoriosIdentificados.sh
+
+
+#2) Desarrollar un script que descargue el archivo del numeral 1 y genere un archivo comprimido
+# con todos los archivos .txt y .pdf que estén en la carpeta generada por el directorio descargado y en los subdirectorios
+# asociados (un sólo nivel de profundidad). Adicionalmente, generar un informe (archivo de texto)
+# que incluya
+# - Fecha del momento en el que se realizó la copia de seguridad.
+# - ¿Cuánto tiempo se demoró realizando todo el proceso?
+# - Listado de los archivos comprimidos
+
+#3) Escribir una rutina que cree un directorio llamado accesosDirectos en el home del usuario 
+# con los enlaces simbólicos a todos los archivos de la carpeta descargada, y archivos de sus 
+# subdirectorios.
+
+
+
+
 

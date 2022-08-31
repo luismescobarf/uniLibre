@@ -1,0 +1,19 @@
+total 5728
+-rw-r--r--  1 luismiguelescobar  staff     0B Aug 17 14:22 Ejemplo.pdf
+lrwxr-xr-x  1 luismiguelescobar  staff    49B Aug 17 15:00 bancos.txt -> /Users/luismiguelescobar/Downloads/bank-names.txt
+drwxr-xr-x  6 luismiguelescobar  staff   192B Aug 17 14:34 descompresion
+-rw-r--r--  1 luismiguelescobar  staff    88B Aug 17 15:45 error.log
+-rw-r--r--  1 luismiguelescobar  staff     0B Aug 17 14:20 foto.png
+-rw-r--r--  2 luismiguelescobar  staff   817K Aug 17 14:50 homero.txt
+-rw-r--r--  1 luismiguelescobar  staff   817K Aug 17 14:40 iliad.txt
+-rw-r--r--  1 luismiguelescobar  staff     0B Aug 17 15:56 listado.txt
+-rw-r--r--@ 1 luismiguelescobar  staff    69K Aug 17 14:23 matr00-1.pdf
+-rw-r--r--  1 luismiguelescobar  staff   321B Aug 17 14:22 otraSalida.txt
+-rw-r--r--  2 luismiguelescobar  staff   817K Aug 17 14:50 otroAcceso.txt
+-rw-r--r--  1 luismiguelescobar  staff     0B Aug 17 14:20 primero.txt
+-rw-r--r--  1 luismiguelescobar  staff     0B Aug 17 15:46 probandoSalida.txt
+-rw-r--r--  1 luismiguelescobar  staff    88B Aug 17 15:47 registroEror.txt
+-rw-r--r--  1 luismiguelescobar  staff   326B Aug 17 15:50 salida.log
+drwxr-xr-x  6 luismiguelescobar  staff   192B Aug 17 14:30 salidaTar
+-rw-r--r--  1 luismiguelescobar  staff     0B Aug 17 14:20 segundo.txt
+-rw-r--r--  1 luismiguelescobar  staff   293K Aug 17 14:42 textosComprimidos.tar.gz

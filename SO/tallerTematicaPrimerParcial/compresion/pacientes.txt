@@ -1,0 +1,6 @@
+id_paciente,nivel_colesterol
+1,190
+2,250
+3,220
+4,260
+5,160

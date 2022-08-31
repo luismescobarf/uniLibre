@@ -1,0 +1,8 @@
+-> Sesión 12:
+------------
+-> Orientada al Reto2:
+    - Resolver reto análogo.
+        * Hacer uso de super clase (contextos).*
+        * También utilizar las subclases (clases hijas).*
+        * Para el contexto de herencia, alcance de variables tipo "protected".*
+        * Polimorfismo entre super clase y clases.*

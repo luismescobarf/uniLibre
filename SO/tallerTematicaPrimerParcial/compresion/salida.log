@@ -1,0 +1,20 @@
+ls: illegal option -- 9
+usage: ls [-@ABCFGHLOPRSTUWabcdefghiklmnopqrstuwx1%] [file ...]
+Ejemplo.pdf
+bancos.txt
+descompresion
+error.log
+foto.png
+homero.txt
+iliad.txt
+listado.txt
+matr00-1.pdf
+otraSalida.txt
+otroAcceso.txt
+primero.txt
+probandoSalida.txt
+registroEror.txt
+salida.log
+salidaTar
+segundo.txt
+textosComprimidos.tar.gz

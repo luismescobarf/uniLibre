@@ -1,0 +1,27 @@
+Número de veces que se ha utilizado tar: 
+      24
+Líneas del historial involucrando el comando: 
+21
+22
+24
+112
+113
+204
+207
+208
+209
+210
+219
+220
+222
+223
+224
+225
+229
+232
+234
+235
+236
+257
+258
+259

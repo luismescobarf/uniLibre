@@ -1,0 +1,6 @@
+id_paciente,SNP_a,SNP_b
+1,AA,CC
+2,AC,GG
+3,AA,CG
+4,AT,GG
+5,AA,CC
