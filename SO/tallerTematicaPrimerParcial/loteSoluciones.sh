@@ -136,7 +136,9 @@ rm compresion/ejecucionPython.sh compresion/directoriosIdentificados.sh
 # cat bank.csv | tr ',' '\t' | cut -f 1 | grep -v age | sort | uniq 
 # cat bank.csv | tr ',' '\t'| head -n 1 | tr '\t' '\n' 
 
+curl https://raw.githubusercontent.com/luismescobarf/uniLibre/main/bank.csv 
 
+cat bank.csv | tr ',' '\t'| head -n 1 | tr '\t' '\n' 
 
 
 
