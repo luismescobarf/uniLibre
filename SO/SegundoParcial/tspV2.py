@@ -1,7 +1,7 @@
 #Librerías
 import pprint as pp
 import random 
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import os
 import random
 import sys
@@ -158,103 +158,8 @@ def cargarCasoTSP(rutaArchivo: str) -> list:
     
     #Retornando la red recibida
     return nodosArchivo    
+   
 
-def ejemploGraficadoMatplotlib():
-    
-    numeroPuntos = 10
-    componentesX = list(range(10))      
-    componentesY = []
-    for i in range(numeroPuntos):
-        componentesY.append(i**2)
-        
-    #Ejemplo básico de graficado matplotlib
-    plt.plot(
-        #Componentes en X
-        componentesX,
-        #Componentes en Y
-        componentesY,
-        #Estilo graficado
-        'bs:'
-    )
-    
-    #Guardarlo en un archivo (evitar sobreescrituras)
-    nombreArchivo = "primerPlot"
-    elementosCarpeta=os.listdir("./")
-    # pp.pprint(elementosCarpeta)
-    ocurrenciasNombreArchivo = 0
-    for elemento in elementosCarpeta:
-        if elemento.endswith(".png") and nombreArchivo in elemento:
-            ocurrenciasNombreArchivo += 1   
-    
-    plt.savefig(nombreArchivo+str(ocurrenciasNombreArchivo+1)+'.png',bbox_inches='tight')
-    
-    #Mostrarlo en pantalla
-    plt.show()
-    
-#Dibujar los nodos de la red que se ha cargado
-def dibujarCasoTSP(nodos):
-    
-    componentesX = []
-    componentesY = []
-    
-    for nodo in nodos:
-        componentesX.append(nodo['x'])
-        componentesY.append(nodo['y'])
-        
-    plt.scatter(
-        componentesX,
-        componentesY,
-        s=10,
-        marker='v'
-    )
-    
-    plt.show()    
-    
-#Dibujar la ruta que se está construyendo
-def dibujarAvance(ruta,nodos):
-    
-    componentesX = []
-    componentesY = []
-    
-    for nodo in nodos:
-        componentesX.append(nodo['x'])
-        componentesY.append(nodo['y'])
-        
-    plt.scatter(
-        componentesX,
-        componentesY,
-        s=10,
-        marker='v'
-    )
-    
-    componentesX_NodosCubiertos = []
-    componentesY_NodosCubiertos = []
-    for nodoCubierto in ruta:
-        componentesX_NodosCubiertos.append( nodos[nodoCubierto]['x'])
-        componentesY_NodosCubiertos.append( nodos[nodoCubierto]['y'] )
-    
-    #Resaltar los puntos cubiertos
-    plt.scatter(
-        componentesX_NodosCubiertos,
-        componentesY_NodosCubiertos,
-        s=20,
-        marker='d'
-    )
-    
-    #Unir los puntos cubiertos
-    plt.plot(
-        componentesX_NodosCubiertos,
-        componentesY_NodosCubiertos,
-        linewidth=0.5
-    )
-    
-    #Activar mostrar el avance
-    #plt.show() 
-    
-    #Almacenar en una carpeta el avance (animación)
-    rutaGraficos = 'avanceNN_TSP/'
-    plt.savefig(rutaGraficos+str(len(ruta))+'.png',bbox_inches="tight")
-    
     
     
 #Sección principal
